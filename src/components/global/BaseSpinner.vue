@@ -16,6 +16,7 @@ export default {}
   right: 0;
   left: 0;
   position: absolute;
+  z-index: 10000000;
   width: 100vw;
   height: 100vh;
   display: flex;
