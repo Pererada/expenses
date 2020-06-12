@@ -10,12 +10,12 @@ export default {
       visible: false
     }
   },
-  create () {
+  created () {
     this.$root.$on('Spinner::show', () => {
       this.visible = true
     })
 
-    this.$root.$on('Spinner::ride', () => {
+    this.$root.$on('Spinner::hide', () => {
       this.visible = false
     })
   }

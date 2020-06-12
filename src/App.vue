@@ -2,7 +2,7 @@
   <div id="app">
     <base-spinner />
     <button @click="mostrarSpinner()">
-    Vai vendo mané</button>
+    Vai</button>
     <!--<router-view/>-->
   </div>
 </template>
@@ -11,7 +11,7 @@
 import BaseSpinner from './components/global/BaseSpinner'
 
 export default {
-  name: 'APP',
+  name: 'App',
   components: {
     BaseSpinner
   },
