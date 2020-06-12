@@ -1,10 +1,25 @@
 <template>
-  <div class="base-spinner fa-3x">
+  <div class="base-spinner fa-3x" v-if="visible">
     <i class="fas fa-circle-notch fa-spin"></i>
   </div>
 </template>
 <script>
-export default {}
+export default {
+  data () {
+    return {
+      visible: false
+    }
+  },
+  create () {
+    this.$root.$on('Spinner::show', () => {
+      this.visible = true
+    })
+
+    this.$root.$on('Spinner::ride', () => {
+      this.visible = false
+    })
+  }
+}
 </script>
 
 <style lang="scss" scoped>
@@ -16,13 +31,13 @@ export default {}
   right: 0;
   left: 0;
   position: absolute;
-  z-index: 10000000;
+  z-index: 1;
   width: 100vw;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: black;
+  background-color: rgba($color: #4117d8, $alpha: 0.6);
   color: $white;
   font-size: 100px;
 }
