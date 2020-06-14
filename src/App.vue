@@ -1,9 +1,8 @@
 <template>
   <div id="app">
     <base-spinner />
-    <button @click="mostrarSpinner()">
-    Vai</button>
-    <!--<router-view/>-->
+    <h1>Avic Food</h1>
+    <router-view/>
   </div>
 </template>
 
@@ -22,4 +21,10 @@ export default {
   }
 }
 </script>
-<style lang="scss"></style>
+<style lang="scss">
+#app {
+  min-height: 100vh;
+  background-color: var(--dark);
+
+}
+</style>
