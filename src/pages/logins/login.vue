@@ -13,8 +13,7 @@
           <input type="password" class="form-control" placeholder="Senha">
         </div>
         <button class="btn btn-primary w-100">
-          <i></i>
-          <strong>Entrar</strong>
+        <strong>Entrar</strong>
         </button>
       </div>
     </div>
