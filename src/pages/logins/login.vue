@@ -1,6 +1,10 @@
 <template>
    <form class="form-login">
     <div class="card">
+      <div class="card-header text-center">
+        <img src="../../assets/logo-60x60px.png" class="img-fluid" alt="Imagem responsiva">
+     <h1 class="mb-2">Avic Food</h1>
+      </div>
       <div class="card-body">
         <div class="form-group">
           <input type="text" class="form-control" placeholder="E-mail">
@@ -26,6 +30,9 @@ height: 100vh;
 display: flex;
 align-items: center;
 justify-content: center;
-
+}
+.card {
+  width: 50%;
+  color: var(--dark);
 }
 </style>>
