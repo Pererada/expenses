@@ -7,5 +7,13 @@
 .card,
 .alert,
 .form-control {
-    border-radius: 0 !important;
+    border-radius: 20 !important;
+}
+.btn-primary {
+    background-color: $indigo;
+    border-color:$white;
+    &:hover {
+        background-color: $dark;
+    }
+
 }

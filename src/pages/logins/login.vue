@@ -13,7 +13,8 @@
           <input type="password" class="form-control" placeholder="Senha">
         </div>
         <button class="btn btn-primary w-100">
-          Enviar
+          <i></i>
+          <strong>Entrar</strong>
         </button>
       </div>
     </div>
@@ -30,9 +31,18 @@ height: 100vh;
 display: flex;
 align-items: center;
 justify-content: center;
+h1 {
+  font-size: 30px;
+}
 }
 .card {
   width: 50%;
   color: var(--dark);
 }
+.btn {
+  font-size: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
 </style>>
