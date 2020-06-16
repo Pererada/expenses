@@ -24,8 +24,15 @@
           placeholder="Senha"
           >
         </div>
-        <button class="btn btn-primary w-100">
-        <strong>Entrar</strong>
+        <button class="btn btn-primary w-100" :disabled="loading">
+          <template v-if="loading">
+            Entrando ...
+            <i class="fa fa-spinner fa-spin"></i>
+          </template>
+          <template>
+            Entrar
+            <i class="fa fa-sign-in-alt"></i>
+          </template>
         </button>
       </div>
     </div>
@@ -34,15 +41,28 @@
 
 <script>
 export default {
+  nome: 'login',
   data: () => {
     return {
-      email: '',
-      password: ''
+      loading: false,
+      email: 'avic.telecom@gmail.com',
+      password: '123123'
     }
   },
   methods: {
-    doLogin () {
-      console.log('fazendo novo app')
+    async doLogin () {
+      this.loading = true
+      const { email, password } = this
+      try {
+        const res = await this.$firebase.auth().signInWithEmailAndPassword(email, password)
+
+        window.uid = res.user.uid
+
+        this.$router.push({ name: 'home' })
+      } catch (err) {
+        console.log(err)
+      }
+      this.loading = false
     }
   }
 }
