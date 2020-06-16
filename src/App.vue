@@ -16,13 +16,13 @@ export default {
   },
   mounted () {
     this.$firebase.auth().onAuthStateChanged(user => {
+      window.uid = user ? user.uid : null
+      console.log(window.uid)
 
+      this.$router.push({ name: window.uid ? 'home' : 'login' })
+
+      this.$root.$emit('Spinner::hide')
     })
-  },
-  methods: {
-    mostrarSpinner () {
-      this.$root.$emit('Spinner::show')
-    }
   }
 }
 </script>
