@@ -15,7 +15,9 @@ export default {
     BaseSpinner
   },
   mounted () {
-    console.log(this.$firebase)
+    this.$firebase.auth().onAuthStateChanged(user => {
+
+    })
   },
   methods: {
     mostrarSpinner () {
