@@ -64,6 +64,13 @@ export default {
       }
       this.loading = false
     }
+  },
+  beforeRouteEnter (to, from, next) {
+    next(vm => {
+      if (window.uid) {
+        vm.$router.push({ name: 'home' })
+      }
+    })
   }
 }
 </script>
