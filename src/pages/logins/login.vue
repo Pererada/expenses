@@ -1,5 +1,5 @@
 <template>
-   <form class="form-login">
+   <form @submit.prevent="doLogin()" class="form-login">
     <div class="card">
       <div class="card-header text-center">
         <img src="../../assets/logo-60x60px.png" class="img-fluid" alt="Imagem responsiva">
@@ -7,10 +7,22 @@
       </div>
       <div class="card-body">
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="E-mail">
+          <input
+          required
+          type="email"
+          v-model="email"
+          class="form-control"
+          placeholder="E-mail"
+          >
         </div>
         <div class="form-group">
-          <input type="password" class="form-control" placeholder="Senha">
+          <input
+          required
+          type="password"
+          v-model="password"
+          class="form-control"
+          placeholder="Senha"
+          >
         </div>
         <button class="btn btn-primary w-100">
         <strong>Entrar</strong>
@@ -21,7 +33,19 @@
 </template>
 
 <script>
-export default {}
+export default {
+  data: () => {
+    return {
+      email: '',
+      password: ''
+    }
+  },
+  methods: {
+    doLogin () {
+      console.log('fazendo novo app')
+    }
+  }
+}
 </script>
 <style lang="scss" scoped>
 
