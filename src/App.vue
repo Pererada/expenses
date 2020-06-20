@@ -14,14 +14,17 @@ export default {
   components: {
     BaseSpinner
   },
+  data: () => ({ isLogged: false }),
   mounted () {
     this.$firebase.auth().onAuthStateChanged(user => {
       window.uid = user ? user.uid : null
-      console.log(window.uid)
+      this.isLogged = !!user
 
       this.$router.push({ name: window.uid ? 'home' : 'login' })
 
-      this.$root.$emit('Spinner::hide')
+      setTimeout(() => {
+        this.$root.$emit('Spinner::hide')
+      }, 300)
     })
   }
 }

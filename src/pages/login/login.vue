@@ -29,7 +29,7 @@
             Entrando ...
             <i class="fa fa-spinner fa-spin"></i>
           </template>
-          <template>
+          <template v-else>
             Entrar
             <i class="fa fa-sign-in-alt"></i>
           </template>
@@ -93,6 +93,7 @@ h1 {
   font-size: 20px;
   align-items: center;
   justify-content: center;
+  padding: 12px;
 }
 
 </style>>
